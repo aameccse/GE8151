@@ -18,7 +18,15 @@ header {
     PADDING:10PX;
     text-align: center;
     font-size: 35px;
-    color: white;
+    -webkit-text-stroke: 1px red;
+    color: yellow;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+   
 }
 
 #grad1{
@@ -33,9 +41,10 @@ header {
       -1px 1px 0 #000,
        1px 1px 0 #000;
    }
-   #grad2{
-   -webkit-text-stroke: 1px yellow;
-    color: yellow;
+   #grad2{display:inline-table;
+   float:right;
+   -webkit-text-stroke: 1px white;
+    color: white;
    text-shadow:
        3px 3px 0 #000,
      -1px -1px 0 #000,  
@@ -43,6 +52,20 @@ header {
       -1px 1px 0 #000,
        1px 1px 0 #000;
    }
+   .btn {float:left;
+  background-color: brown;
+  border: border-box;
+  color: white;
+  padding: 1px 35px;
+  text-align: center;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: green;
+  color: black;
+}
 
 /* Create two columns/boxes that floats next to each other */
 nav {
@@ -84,10 +107,8 @@ section:after {
 /* Style the footer */
 footer {
     background-color: #777;
-    padding: 10px;
-    text-align: center;
-    //color: white;
-	font-size:20px;
+    padding: 35px;
+    font-size:20px;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
@@ -124,10 +145,18 @@ footer {
 </section>
 
 <footer>
-<div id="grad2">
-  <p>DEVELOPED BY DEPARTMENT OF CSE </p>
+<button  class="btn" onclick="myFunction()" >ABOUT</button><div id="grad2"><p id="myDIV">DEVELOPED BY DEPARTMENT OF CSE </p>
   </div>
 </footer>
-
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.innerHTML === "DEVELOPED BY DEPARTMENT OF CSE") {
+        x.innerHTML = "UPLOADED AND MAINTAINED BY : SRINIVASAN 3 YEAR CSE <br>AAMEC,KOVILVEENI. ";
+    } else {
+        x.innerHTML = "DEVELOPED BY DEPARTMENT OF CSE";
+    }
+}
+</script>
 </body>
 </html>
